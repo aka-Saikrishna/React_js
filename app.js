@@ -1,47 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom"
-{
-  /* <div id="parent">
-  <div id="child">
-    <h1>I'm h1 tag</h1>
-    <h2>I'm h2 tag</h2>
-  </div>
-  <div id="child2">
-    <h1>I'm h1 tag</h1>
-    <h2>I'm h2 tag</h2>
-  </div>
-</div> */
-}
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },[
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag")
-    ]
-  ),
-  React.createElement(
-    "div",
-    { id: "child2" },[
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag")
-    ]
-  ),
+// React.createElement => ReactElemet - JS object => HTMLElement(render)
+// this is too hard to read and in the sence of developer frendly too.
 
-);
-console.log(parent);
+// So, react develpers introduced "JSX"
 
-// To avoid this mess nested structure, JSX exist
+// JSX - Html like or XML like syntax
+// JSX - transpiled before it reaches to JS by parcelwith the help of babel
+// How JSX works 
+// JSX => React.createElement => ReactElemet - JS object => HTMLElement(render)
+const jsxHeading = <h1 id="heading">Namaste React using JSX</h1>
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "Hello World from React!"
-// );
-// console.log(heading) // returns an Object
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-root.render(parent);
+root.render( jsxHeading);
