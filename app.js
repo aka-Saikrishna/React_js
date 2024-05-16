@@ -2,19 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom"
 
 // React.createElement => ReactElemet - JS object => HTMLElement(render)
-// this is too hard to read and in the sence of developer frendly too.
-
-// So, react develpers introduced "JSX"
-
-// JSX - Html like or XML like syntax
-// JSX - transpiled before it reaches to JS by parcelwith the help of babel
-// How JSX works 
-// JSX => React.createElement => ReactElemet - JS object => HTMLElement(render)
-const heading = 
+// React Element
+const title = 
  (<h1 
-className="heading">
+className="title">
     Namaste React using JSX
 </h1>)
 
+// React Component
+// Class Based Component - OLD
+// Functional Component - NEW 
+
+const HeadingComponent1 = () => {
+    return <h1>React Functional Component - </h1>
+}
+// component composition
+const HeadingComponent = () => (
+    
+    <div id="container">
+        {title}
+<h1>React Functional Component - Just a normal javascript fuction returns a react element </h1>
+</div>
+)
+// Both headingComponents are same
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render( heading);
+root.render( <HeadingComponent/>);
