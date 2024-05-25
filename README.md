@@ -21,3 +21,38 @@
 - Tree Shaking - remove unused code
 - Different build for dev and production bundlers
 - browserslist
+
+/* Required 
+* Header
+* - logo
+  - Nav items
+* Body
+* - Search
+  - RestaurantContainer
+    - RestaurantCard
+        - Name of restaurant
+        - Star Rating
+        - cuisine
+        - delivery time
+* Footer
+  - Copyright
+  - links
+  - Address
+  - Constact
+*/
+
+- not using keys(not acceptable) <<<<<<<< index as a key <<<<<< unique key(best practice)
+
+
+There are two types of Exports/Imports
+  - Default export / import
+      export default <component name>; =====> import <component name> from '<path to component>'; 
+  - Named export/ import
+      export const <name for export> = <value for export>; ===> import { <name for export> } from '<path to component>' ;
+
+
+# React Hooks
+ (Normal Utility functions)
+--> most important hooks
+- useState()
+- useEffect()
