@@ -1,57 +1,48 @@
-import RestaurantCard from "./RestaurantCard.js";
-import restaurantList from "../utils/mockData.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  // local state variable - Super powerful variable
-  const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
-  //Normal Js variable
-  // let listOfRestaurant2 = [
-  //   {
-  //     info: {
-  //       id: "25945",
-  //       name: "KFC",
-  //       cloudinaryImageId: "f986df6f1a1fcf2ff24d2eaf44d570a7",
-  //       deliveryTime: "26-36 mins",
-  //       costForTwo: "₹400 for two",
-  //       cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
-  //       avgRating: 4.5,
-  //     },
-  //   },
-  //   {
-  //     info: {
-  //       id: "259458",
-  //       name: "Oven Story Pizza",
-  //       cloudinaryImageId: "f986df6f1a1fcf2ff24d2eaf44d570a7",
-  //       deliveryTime: "26-36 mins",
-  //       costForTwo: "₹400 for two",
-  //       cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
-  //       avgRating: 4,
-  //     },
-  //   },
-  // ];
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.37240&lng=78.43780&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+   setListOfRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+if (listOfRestaurants.length === 0) {
+ return <Shimmer />
+}
 
   return (
-    <div className="body">
-      <div className="filter">
-        <button
-          className="filter-btn"
+    <div className="container body">
+      <div >
+        <button className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.2
-            );
-            setListOfRestaurants(filteredList)
+            const filterLogic = listOfRestaurants.filter((res) => {
+              return res.info.avgRating > 4.3;
+            });
+            setListOfRestaurants(filterLogic);
           }}
         >
-          Top rated Restaurant
+          Top Restaurants
         </button>
       </div>
       <div className="restaurant-container">
-        {/* <ReataurantCard restrauntData={restaurantList[8]} /> */}
+
         {listOfRestaurants.map((restaurant) => (
+          console.log(restaurant),
           <RestaurantCard key={restaurant.info.id} restrauntData={restaurant} />
         ))}
+        
       </div>
     </div>
   );

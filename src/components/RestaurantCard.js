@@ -6,10 +6,10 @@ const RestaurantCard = (props) => {
     name,
     cuisines,
     avgRating,
-    deliveryTime,
     costForTwo,
     cloudinaryImageId,
   } = restrauntData?.info;
+  const { slaString } = restrauntData?.info?.sla;
   return (
     <div className="res-card">
       <img
@@ -26,7 +26,7 @@ const RestaurantCard = (props) => {
       <div className="rating">
           {STAR_SVG}
         <h4>{avgRating}</h4>
-        <h4 className="timing">{deliveryTime}</h4>
+        <h4 className="timing">{slaString}</h4>
       </div>
       <h4 className="costForTwo">{costForTwo}</h4>
     </div>

@@ -28,8 +28,8 @@ export const STAR_SVG = (
           y2="19"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#21973B"></stop>
-          <stop offset="1" stop-color="#128540"></stop>
+          <stop stopColor="#21973B"></stop>
+          <stop offset="1" stopColor="#128540"></stop>
         </linearGradient>
       </defs>
     </svg>
