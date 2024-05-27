@@ -89,3 +89,20 @@ img {
   justify-content: center;
   gap: 10px;
 }
+.login{
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.search-btn {
+  margin: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.search-input{
+  margin: 5px;
+  padding: 5px 15px;
+}
+.filter{
+  display: flex;
+  justify-content: space-around;
+}
