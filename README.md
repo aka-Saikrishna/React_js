@@ -56,3 +56,7 @@ There are two types of Exports/Imports
 --> most important hooks
 - useState()
 - useEffect()
+
+# types of routing in web application
+- Client Side ROuting => Routing is done on the client side.
+- Server Side Routing => basically we use backend data to route to different pages on the frontend.

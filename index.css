@@ -21,7 +21,7 @@ body {
 img {
   height: 60px;
   width: 60px;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
 }
 .nav-items > ul {
@@ -47,8 +47,9 @@ img {
   margin: 25px;
 }
 .res-card:hover {
-  cursor: pointer;
-  background-color: #fbfb;
+  scale: 0.95;
+  transition: ease-in-out .15s;
+  
 }
 .res-card > .img {
   width: 100%;
@@ -105,4 +106,32 @@ img {
 .filter{
   display: flex;
   justify-content: space-around;
+}
+.error-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #fbf;
+  line-height: 50px;
+}
+.items-card{
+  width: 60%;
+  height: fit-content;
+  margin: 0 auto;
+  background-color: #fbf;
+  margin-top: 50px;
+}
+.items-card ul{
+  list-style-type: none;
+}
+.items-card h1{
+  font-size: 1.5em;
+}
+.link{
+  text-decoration: none;
+  color: black;
 }
