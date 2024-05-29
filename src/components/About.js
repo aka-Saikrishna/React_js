@@ -1,8 +1,13 @@
 import React from 'react'
+import User from './User.js'
+
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      About
+    <User name={"Saikrishna (function)"}/>
+    </div>
   )
 }
 

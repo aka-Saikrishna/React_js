@@ -33,6 +33,11 @@ img {
   list-style-type: none;
   cursor: pointer;
 }
+.nav-items > ul > li > link{
+  text-decoration: none;
+  color: black;
+}
+
 .search {
   margin: 5px;
 }
@@ -120,7 +125,7 @@ img {
 }
 .items-card{
   width: 60%;
-  height: fit-content;
+
   margin: 0 auto;
   background-color: #fbf;
   margin-top: 50px;
@@ -135,3 +140,4 @@ img {
   text-decoration: none;
   color: black;
 }
+

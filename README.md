@@ -60,3 +60,12 @@ There are two types of Exports/Imports
 # types of routing in web application
 - Client Side ROuting => Routing is done on the client side.
 - Server Side Routing => basically we use backend data to route to different pages on the frontend.
+
+
+
+# custom hooks
+
+# Chunking / Code splitting/ lazy loading / Dynamic Bundling / Dynamic import / ondemand loading
+
+# how to make chunks and when to make?
+-
